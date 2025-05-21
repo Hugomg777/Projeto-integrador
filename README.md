@@ -42,9 +42,12 @@ Git e GitHub para controle de versão
 
 
 📁 Estrutura inicial
-/docs          → Documentação do projeto
-/src           → Código-fonte
-/assets        → Imagens e recursos visuais
+/docs    → Documentação do projeto
+
+/src     → Código-fonte
+
+/assets  → Imagens e recursos visuais
+
 
 📅 Planejamento
 Veja mais detalhes no diretório /docs, incluindo:
