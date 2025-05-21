@@ -11,17 +11,21 @@ Desenvolver habilidades práticas em desenvolvimento web (front-end e/ou back-en
 
 
 👥 Integrantes
-Hugo Nilson
 
+Hugo Nilson
 
 Roberth Neves
 
-
 Thailc Lopes
+
 Alef Francisco
+
 Matheus Lopes
+
 Juan Pablo
+
 🛠️ Tecnologias previstas
+
 HTML, CSS, JavaScript
 
 
