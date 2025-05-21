@@ -11,6 +11,6 @@ Cronograma (exemplo)
 |--------------------------|-------------|----------|
 | Planejamento e pesquisa  | 21/05       | 25/05    |
 | Prototipação             | 26/05       | 26/05    |
-| Desenvolvimento inicial  | 02/06       | 15/06    |
+| Desenvolvimento inicial  | 02/06       | 15/08    |
 | Testes e ajustes finais  | 00/00       | 00/00    |
-| Apresentação             | 21/05       | 18/08    |
+| Apresentação             | 18/08       | 20/08    |
