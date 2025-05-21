@@ -51,15 +51,14 @@ Git e GitHub para controle de versão
 
 
 📅 Planejamento
-Veja mais detalhes no diretório /docs, incluindo:
-Cronograma
 
+Veja mais detalhes no diretório /docs, incluindo:
+
+Cronograma
 
 Requisitos
 
-
 Estrutura do banco de dados (futura)
-
 
 Esboço das telas
 
