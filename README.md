@@ -33,7 +33,7 @@ HTML, CSS, JavaScript
 Frameworks: React
 
 
-Backend: Node.js / Python / PHP
+Backend: Java
 
 
 Banco de Dados: MySQL
