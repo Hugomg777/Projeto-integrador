@@ -42,6 +42,7 @@ Git e GitHub para controle de versão
 
 
 📁 Estrutura inicial
+
 /docs    → Documentação do projeto
 
 /src     → Código-fonte
