@@ -1,4 +1,5 @@
 📌 Descrição
+
 Este projeto é um site de vendas voltado para o comércio de produtos artesanais. A proposta é criar uma plataforma amigável e funcional onde artesãos possam divulgar e vender suas peças diretamente aos consumidores.
 🎯 Objetivo
 Conectar artesãos e compradores em um ambiente digital simples e intuitivo.
