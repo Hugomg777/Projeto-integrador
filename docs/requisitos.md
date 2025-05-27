@@ -3,7 +3,7 @@
 - Visualização de produtos
 - Carrinho de compras
 - Página de contato
-- Login de usuário (opcional)
+- Login de usuário 
 
 ## Requisitos Não Funcionais
 - Site responsivo (funciona bem no celular)
