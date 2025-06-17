@@ -1,8 +1,8 @@
 # Vale das Artes
-Run the following commands on separate terminals
+Run the following command on terminal
 ```sh
 npm install
 ```
-No terminal coloque o comando
+In the terminal, enter the command
 node index.js
-para rodar o servidor 
+to run the server
