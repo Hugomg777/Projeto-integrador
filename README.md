@@ -4,5 +4,7 @@ Run the following command on terminal
 npm install
 ```
 In the terminal, enter the command
+```sh
 node index.js
+```
 to run the server
