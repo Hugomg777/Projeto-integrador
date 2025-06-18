@@ -83,3 +83,4 @@ CREATE TABLE pagamento (
     forma_pagamento VARCHAR(50) NOT NULL,
     valor_pagamento DECIMAL (10, 2) NOT NULL
 )
+
