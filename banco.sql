@@ -160,11 +160,3 @@ ADD CONSTRAINT fk_carrinho_produto_carrinho
     FOREIGN KEY (id_carrinho) REFERENCES carrinho(id_carrinho),
 ADD CONSTRAINT fk_carrinho_produto_produto
     FOREIGN KEY (id_produto) REFERENCES produtos(id_produto);
-
-
-
-
-
-
-
-
