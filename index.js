@@ -1,5 +1,5 @@
 const express = require('express');
-const artistaRoutes = require('./routes/artistaRoutes');
+const artistaRoutes = require('./routes/artistaRoutes'); 
 const { sequelize, connectDB } = require('./config/db'); 
 require('dotenv').config(); // Para carregar as variáveis do .env
 
