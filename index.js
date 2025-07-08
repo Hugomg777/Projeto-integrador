@@ -4,10 +4,11 @@ const { sequelize, connectDB } = require('./config/db');
 require('dotenv').config(); // Para carregar as variáveis do .env
 
 const app = express();
-
+const userRoutes = require('./routes/userRoutes/userRoutes');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/artistas', artistaRoutes);
+app.use('/api/usuarios', userRoutes);
 
 app.get('/', (req, res) => {
     res.send('Bem-vindos ao Vale das Artes! API funcionando.');

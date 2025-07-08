@@ -1,6 +1,6 @@
 // loja-artesanato/models/User.js
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db'); // Importaq a instancia do sequelize
+const { sequelize } = require('../../config/db');
 const bcrypt = require('bcryptjs'); // importar bcryptjs para hash de senhas
 
 const User = sequelize.define('User', {
