@@ -19,17 +19,17 @@ const User = sequelize.define('User', {
         unique: true, // garante que o email seja único
         validate: {
             isEmail: true // valida se é um formato de e-mail válido
-        }
+        }   
     },
     password: { // A coluna que armazena a senha (já hasheada)
         type: DataTypes.STRING,
         allowNull: false
     },
-    resetPasswordToken: { // NOVO CAMPO: Para armazenar o token de redefinição de senha
+    resetPasswordToken: { // armazena o token de redefinição de senha
         type: DataTypes.STRING,
         allowNull: true // Pode ser nulo quando não há um reset em andamento
     },
-    resetPasswordExpires: { // NOVO CAMPO: Para armazenar a data de expiração do token de redefinição
+    resetPasswordExpires: { //  armazena a data de expiração do token de redefinição
         type: DataTypes.DATE,
         allowNull: true // Pode ser nulo
     }
@@ -57,7 +57,7 @@ User.beforeUpdate(async (user) => {
     }
 });
 
-// --- MÉTODO DE INSTANCIA: Para comparar senhas ---
+// --- MEeTODO DE INSTANCIA: Para comparar senhas ---
 // Adiciona um método 'comparePassword' a cada instância de usuário para verificar senhas.
 User.prototype.comparePassword = async function(candidatePassword) {
     // Compara a senha digitada pelo usuário com a senha hasheada salva no DB
