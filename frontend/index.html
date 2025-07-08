@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Loja de Artesanato</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="login-container">
+        <h2>Bem-vindo(a) ao Vale das Artes</h2>
+        <h3>Faça seu Login</h3>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+            <p class="message" id="message"></p> </form>
+        <p>Ainda não tem conta? <a href="#" id="showRegister">Cadastre-se aqui</a></p>
+
+        <hr> <h3>Ou Cadastre-se</h3>
+        <form id="registerForm" style="display: none;"> <div class="form-group">
+                <label for="registerName">Nome:</label>
+                <input type="text" id="registerName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Senha:</label>
+                <input type="password" id="registerPassword" name="password" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+            <p class="message" id="registerMessage"></p>
+        </form>
+        <p><a href="#" id="showLogin">Voltar ao Login</a></p>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>
