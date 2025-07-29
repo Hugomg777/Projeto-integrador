@@ -3,14 +3,9 @@ const { sequelize, connectDB } = require('./config/db');
 require('dotenv').config(); // Para carregar as variáveis do .env
 
 const app = express();
-
-// --- Middlewares (A PARTE MAIS IMPORTANTE) ---
-// ✅ ESTAS DUAS LINHAS TÊM QUE VIR PRIMEIRO, LOGO DEPOIS DE 'const app = express();'
-// Elas ensinam o Express a ler o JSON enviado pelo Insomnia.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// --- Importar as Rotas (DEPOIS dos middlewares) ---
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const artistaRoutes = require('./routes/artistaRoutes');

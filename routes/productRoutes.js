@@ -1,9 +1,6 @@
-// routes/productRoutes.js
-
 const express = require('express');
 const router = express.Router();
 
-// ✅ CORREÇÃO: O controller de produto está na pasta /controllers, não em /userControllers.
 const productController = require('../controllers/productController');
 
 // Rota para criar um novo produto

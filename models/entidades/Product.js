@@ -1,14 +1,12 @@
 const { DataTypes } = require('sequelize');
-
 const { sequelize } = require('../../config/db');
-
 const Product = sequelize.define('Product', {
 
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        field: 'id_produto' // Mapeia 'id' para a coluna 'id_produto' do seu SQL
+        field: 'id_produto' 
     },
     nome: {
         type: DataTypes.STRING,

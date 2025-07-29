@@ -11,13 +11,11 @@ const Artista = sequelize.define('Artista', {
     cpf_artista: {
         type: DataTypes.STRING(100),
         allowNull: false,
-        unique: true,
         field: 'cpf_artista'
     },
     cnpj_artista: {
         type: DataTypes.STRING(100),
         allowNull: true,
-        unique: true, 
         field: 'cnpj_artista'
     },
     telefone_artista: {
