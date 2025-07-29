@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const artistaRoutes = require('./routes/artistaRoutes');
-const enderecoRoutes = require('./routes/enderecoRoutes');
+const enderecoRoutes = require('./routes/enderecoRoute');
 
 app.use('/api/users', userRoutes);
 app.use('/api/produtos', productRoutes);

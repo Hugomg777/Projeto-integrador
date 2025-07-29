@@ -1,7 +1,6 @@
 
 const Product = require('../models/entidades/Product');
 
-
 exports.createProduto = async (req, res) => {
     try {
         const novoProduto = await Product.create(req.body);
