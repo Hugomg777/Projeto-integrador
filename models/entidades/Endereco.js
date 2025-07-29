@@ -24,7 +24,7 @@ const Endereco = sequelize.define('Endereco', {
         field: 'telefone'
     },
     numero: { 
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'numero'
     },

@@ -9,13 +9,14 @@ app.use(express.urlencoded({ extended: true }));
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const artistaRoutes = require('./routes/artistaRoutes');
+const enderecoRoutes = require('./routes/enderecoRoutes');
 
-// --- Usar as Rotas ---
 app.use('/api/users', userRoutes);
 app.use('/api/produtos', productRoutes);
 app.use('/api/artistas', artistaRoutes);
+app.use('/api/enderecos', enderecoRoutes);
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
     res.send('Bem-vindos ao Vale das Artes! API a funcionar.');
 });
 
@@ -23,10 +24,9 @@ const initializeApp = async () => {
     try {
         await connectDB(); // Chama a função que tenta autenticar a conexão com o DB
 
-        await sequelize.sync({ alter: true }); // Escolha { force: true } para resetar ou { alter: true } para atualizar
+        await sequelize.sync({ alter: true });
         console.log('Todos os modelos foram sincronizados com sucesso com o banco de dados.');
 
-        // 3. Iniciar o Servidor Express
         const PORT = process.env.PORT || 3000; // Pega a porta do .env ou usa 3000
         app.listen(PORT, () => {
             console.log(`Servidor a rodar na porta ${PORT}`);

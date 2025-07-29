@@ -1,7 +1,7 @@
 const User = require('../models/entidades/User');
 
 const registerUser = async (req, res) => {
-    // A sua função de registo
+
     try {
         const { email, password, name } = req.body;
         if (!email || !password || !name) {
@@ -17,7 +17,7 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-    // A sua função de login
+
     try {
         const { email, password } = req.body;
         if (!email || !password) {
@@ -38,11 +38,11 @@ const loginUser = async (req, res) => {
     }
 };
 
-// ✅ A FUNÇÃO PARA LISTAR TODOS OS USUÁRIOS
+
 const getAllUsers = async (req, res) => {
     try {
         const users = await User.findAll({
-            // Por segurança, nunca retorne a senha dos usuários
+
             attributes: { exclude: ['password'] }
         });
         res.status(200).json(users);
@@ -52,7 +52,7 @@ const getAllUsers = async (req, res) => {
     }
 };
 
-// ✅ GARANTIR QUE A NOVA FUNÇÃO ESTÁ A SER EXPORTADA
+
 module.exports = {
     registerUser,
     loginUser,
