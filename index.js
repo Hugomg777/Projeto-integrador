@@ -10,11 +10,13 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const artistaRoutes = require('./routes/artistaRoutes');
 const enderecoRoutes = require('./routes/enderecoRoute');
+const pedidoRoutes =  require('./routes/pedidoRoute');
 
 app.use('/api/users', userRoutes);
 app.use('/api/produtos', productRoutes);
 app.use('/api/artistas', artistaRoutes);
 app.use('/api/enderecos', enderecoRoutes);
+app.use('/api/pedido', pedidoRoutes);
 
 app.get('/', (_req, res) => {
     res.send('Bem-vindos ao Vale das Artes! API a funcionar.');

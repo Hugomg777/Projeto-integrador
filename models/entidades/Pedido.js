@@ -1,29 +1,40 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+const { sequelize } = require('../../config/db');
 
 const Pedido = sequelize.define('Pedido', {
-    id_pedido: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        field: 'id_pedido'
-    },
-    valor_total: {
-        type: DataTypes.DECIMAL(10, 2),
-        allowNull: false,
-        field: 'valor_total'
-    },
-    status_pedido: {
-        type: DataTypes.ENUM('pendente', 'pago', 'em_processamento', 'enviado', 'entregue', 'cancelado'),
-        allowNull: false,
-        defaultValue: 'pendente', // definir um valor padrão
-        field: 'status_pedido'
-    }
-   
+  id_pedido: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+    allowNull: false
+  },
+  valor_total: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false
+  },
+  status_pedido: {
+    type: DataTypes.ENUM('pendente', 'pago', 'em_processamento', 'enviado', 'entregue', 'cancelado'),
+    allowNull: false,
+    defaultValue: 'pendente'
+  },
+  data_criacao: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW
+  },
+  data_pagamento: {
+    type: DataTypes.DATE,
+    allowNull: true
+  },
+  data_envio: {
+    type: DataTypes.DATE,
+    allowNull: true
+  }
 }, {
-    tableName: 'pedido', // nome da tabela no banco de dados MySQL
-    timestamps: true,
-    underscored: true
+  tableName: 'pedidos',
+  timestamps: false,
+  underscored: true,
+  freezeTableName: true
 });
 
 module.exports = Pedido;
