@@ -6,12 +6,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const carteiraRoutes = require('./routes/carteiraRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const artistaRoutes = require('./routes/artistaRoutes');
 const enderecoRoutes = require('./routes/enderecoRoute');
 const pedidoRoutes =  require('./routes/pedidoRoute');
 
+app.use('/api/carteiras', carteiraRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/produtos', productRoutes);
 app.use('/api/artistas', artistaRoutes);

@@ -1,27 +1,19 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+const { sequelize } = require('../../config/db');
 
 const Carteira = sequelize.define('Carteira', {
-  id_carteira: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-    field: 'id_carteira'
+  nome: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
   saldo: {
-    type: DataTypes.DECIMAL(10, 2),
+    type: DataTypes.FLOAT,
     allowNull: false,
-    field: 'saldo'
-  },
-  usuario_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'usuario_id'
+    defaultValue: 0
   }
 }, {
-  tableName: 'carteira', // Nome da tabela no banco de dados MySQL
-  timestamps: true,
-  underscored: true
+  tableName: 'carteira',
+  timestamps: true
 });
 
 module.exports = Carteira;
