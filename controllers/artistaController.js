@@ -50,6 +50,11 @@ exports.createArtista = async (req, res) => {
 exports.getAllArtistas = async (req, res) => {
     try {
         const artistas = await Artista.findAll();
+
+        if (artistas.length === 0) {
+            return res.status(200).json({ message: 'Nenhum artista cadastrado no sistema.' });
+        }
+
         res.status(200).json(artistas);
     } catch (error) {
         console.error('Erro ao buscar todos os artistas:', error);
