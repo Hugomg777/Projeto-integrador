@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../../config/db');
-const Pedido = require('./pedido'); // Assumindo que você tem um model Pedido
-const Produto = require('./produto'); // Assumindo que você tem um model Produto
+const Pedido = require('./Pedido'); 
+const Produto = require('./produto'); 
 
 const PedidoProduto = sequelize.define('PedidoProduto', {
   id_pedido_produto: {
