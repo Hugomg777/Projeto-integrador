@@ -1,37 +1,28 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+const { sequelize } = require('../../config/db');
 
 const Pagamento = sequelize.define('Pagamento', {
   id_pagamento: {
     type: DataTypes.INTEGER,
-    primaryKey: true,
     autoIncrement: true,
-    field: 'id_pagamento'
-  },
-  valor: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false,
-    field: 'valor'
+    primaryKey: true
   },
   data_pagamento: {
     type: DataTypes.DATE,
     allowNull: false,
-    field: 'data_pagamento'
+    defaultValue: DataTypes.NOW // Define o valor padrão como a data e hora atuais
   },
-  metodo_pagamento: {
+  forma_pagamento: {
     type: DataTypes.STRING(50),
-    allowNull: false,
-    field: 'metodo_pagamento'
+    allowNull: false
   },
-  pedido_id: { 
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'pedido_id'
+  valor_pagamento: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false
   }
 }, {
-  tableName: 'pagamento', // Nome da tabela no banco de dados MySQL
-  timestamps: true,
-  underscored: true
+  tableName: 'pagamentos',
+  timestamps: false // Se não houver colunas como createdAt e updatedAt
 });
 
 module.exports = Pagamento;

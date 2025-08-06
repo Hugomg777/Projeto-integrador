@@ -18,7 +18,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/produtos', productRoutes);
 app.use('/api/artistas', artistaRoutes);
 app.use('/api/enderecos', enderecoRoutes);
-app.use('/api/pedido', pedidoRoutes);
+app.use('/api/pedidos', pedidoRoutes);
 
 app.get('/', (_req, res) => {
     res.send('Bem-vindos ao Vale das Artes! API a funcionar.');

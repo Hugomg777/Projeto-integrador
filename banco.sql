@@ -61,11 +61,15 @@ CREATE TABLE administradores (
     id_administrador INT PRIMARY KEY AUTO_INCREMENT,
     nome_administrador VARCHAR (100) NOT NULL,
     cpf_administrador VARCHAR(100) NOT NULL UNIQUE,
-    telefone_administrador VARCHAR (100) NOT NULL
+    telefone_administrador VARCHAR (100) NOT NULL,
+    email_administrador VARCHAR (100) NOT NULL,
+    senha_administrador VARCHAR (50) NOT NULL
 );
 
-CREATE TABLE clientes (
+CREATE TABLE user (
     id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    email_cliente VARCHAR (100) NOT NULL,
+    senha_cliente VARCHAR (50) NOT NULL,
     nome_cliente VARCHAR (100) NOT NULL,
     cpf_cliente VARCHAR (100) NOT NULL UNIQUE,
     telefone_cliente VARCHAR (100) NOT NULL
@@ -83,6 +87,7 @@ CREATE TABLE pagamentos (
     forma_pagamento VARCHAR(50) NOT NULL,
     valor_pagamento DECIMAL (10, 2) NOT NULL
 );
+
 -- Tabela auxiliar, pois  um pedido pode conter vários produtos e um produto pode estar em vários pedidos
 CREATE TABLE pedido_produtos (
     id_pedido_produto INT PRIMARY KEY AUTO_INCREMENT,

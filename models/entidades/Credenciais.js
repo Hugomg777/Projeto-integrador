@@ -1,32 +1,24 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+const { sequelize } = require('../../config/db');
 
-const Credenciais = sequelize.define('Credenciais', {
-  id_credenciais: {
+const Credencial = sequelize.define('Credencial', {
+  id_credencial: {
     type: DataTypes.INTEGER,
-    primaryKey: true,
     autoIncrement: true,
-    field: 'id_credenciais'
+    primaryKey: true
   },
-  usuario_id: {
-    type: DataTypes.INTEGER,
+  email_credencial: {
+    type: DataTypes.STRING(100),
     allowNull: false,
-    field: 'usuario_id'
+    unique: true
   },
-  token: {
-    type: DataTypes.STRING(255),
-    allowNull: false,
-    field: 'token'
-  },
-  data_expiracao: {
-    type: DataTypes.DATE,
-    allowNull: true,
-    field: 'data_expiracao'
+  senha_credencial: {
+    type: DataTypes.STRING(100),
+    allowNull: false
   }
 }, {
-  tableName: 'credenciais', // Nome da tabela no banco de dados MySQL
-  timestamps: true,
-  underscored: true
+  tableName: 'credenciais', // Garante que o nome da tabela no banco seja 'credenciais'
+  timestamps: false // Se você não tiver colunas como createdAt e updatedAt
 });
 
-module.exports = Credenciais;
+module.exports = Credencial;
