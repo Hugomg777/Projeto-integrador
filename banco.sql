@@ -88,6 +88,13 @@ CREATE TABLE pagamentos (
     valor_pagamento DECIMAL (10, 2) NOT NULL
 );
 
+CREATE TABLE cartao (
+    id_cartao INT PRIMARY KEY AUTO_INCREMENT,
+    token_cartao VARCHAR(255) NOT NULL UNIQUE,
+    bandeira VARCHAR(50) NOT NULL,
+    validade DATE NOT NULL
+);
+
 -- Tabela auxiliar, pois  um pedido pode conter vários produtos e um produto pode estar em vários pedidos
 CREATE TABLE pedido_produtos (
     id_pedido_produto INT PRIMARY KEY AUTO_INCREMENT,
@@ -165,3 +172,14 @@ ADD CONSTRAINT fk_carrinho_produto_carrinho
     FOREIGN KEY (id_carrinho) REFERENCES carrinho(id_carrinho),
 ADD CONSTRAINT fk_carrinho_produto_produto
     FOREIGN KEY (id_produto) REFERENCES produtos(id_produto);
+
+ALTER TABLE cartao
+ADD COLUMN id_cliente INT NOT NULL,
+ADD CONSTRAINT fk_cartao_cliente
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente);
+
+ALTER TABLE pagamentos
+ADD COLUMN id_cartao INT,
+ADD CONSTRAINT fk_pagamento_cartao
+    FOREIGN KEY (id_cartao) REFERENCES cartao(id_cartao);
+
