@@ -12,11 +12,11 @@
   "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.2",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.6.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.14.1",
-    "nodemailer": "^7.0.4",
+    "nodemailer": "^7.0.5",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
