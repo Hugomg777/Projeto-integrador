@@ -1,7 +1,7 @@
 const Artista = require('../models/entidades/Artista');
 
 exports.createArtista = async (req, res) => {
-    console.log('*** Conteúdo de req.body ao entrar no createArtista:', req.body);
+    console.log('Conteúdo de req.body ao entrar no createArtista:', req.body);
 
     try {
         const {

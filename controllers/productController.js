@@ -58,12 +58,14 @@ exports.deleteProduto = async (req, res) => {
             where: { id: req.params.id }
         });
         if (deleted) {
-            res.status(204).send(); // 204 No Content
-        } else {
-            res.status(404).json({ error: 'Produto não encontrado' });
-        }
+        return res.status(200).json({ mensagem: 'Produto deletado com sucesso.' });
+      }
+
+      return res.status(404).json({ mensagem: 'Produto não encontrado.' });
+
     } catch (error) {
-        console.error("Erro ao deletar produto:", error);
-        res.status(500).json({ error: 'Erro ao deletar o produto: ' + error.message });
+      console.error(error);
+      return res.status(500).json({ mensagem: 'Erro interno do servidor ao deletar o produto.', erro: error.message });
     }
-};
+  }
+;

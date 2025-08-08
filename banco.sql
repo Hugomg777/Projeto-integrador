@@ -66,7 +66,7 @@ CREATE TABLE administradores (
     senha_administrador VARCHAR (50) NOT NULL
 );
 
-CREATE TABLE user (
+CREATE TABLE user(
     id_cliente INT PRIMARY KEY AUTO_INCREMENT,
     email_cliente VARCHAR (100) NOT NULL,
     senha_cliente VARCHAR (50) NOT NULL,
