@@ -46,21 +46,23 @@ exports.atualizarPedido = async (req, res) => {
     const { id } = req.params;
     const { valor_total, status_pedido, data_pagamento, data_envio } = req.body;
 
-    const [linhasAfetadas, [pedidoAtualizado]] = await Pedido.update({
+    const [linhasAfetadas] = await Pedido.update({
       valor_total,
       status_pedido,
       data_pagamento,
       data_envio
     }, {
-      where: { id_pedido: id }, 
-      returning: true 
+      where: { id_pedido: id }
     });
 
     if (linhasAfetadas === 0) {
       return res.status(404).json({ error: 'Pedido não encontrado ou nenhum dado para atualizar.' });
     }
 
+    // Se a atualização foi bem-sucedida, buscamos o registro atualizado
     const pedido = await Pedido.findByPk(id);
+    
+    // Retornamos o objeto atualizado
     res.status(200).json(pedido);
 
   } catch (error) {
@@ -68,7 +70,6 @@ exports.atualizarPedido = async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor ao atualizar pedido.' });
   }
 };
-
 
 exports.deletarPedido = async (req, res) => {
   try {
