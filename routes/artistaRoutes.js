@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const artistaController = require('../controllers/artistaController');
 
-router.post('/', artistaController.createArtista);
-router.get('/', artistaController.getAllArtistas);
-router.get('/:id', artistaController.getArtistaById);
-router.put('/:id', artistaController.updateArtista);
-router.delete('/:id', artistaController.deleteArtista)
+router.post('/criar', artistaController.createArtista);
+router.get('/listartodos', artistaController.getAllArtistas);
+router.get('/buscar/:id', artistaController.getArtistaById);
+router.put('/atualizar/:id', artistaController.updateArtista);
+router.delete('/deletar/:id', artistaController.deleteArtista);
 
 module.exports = router;
