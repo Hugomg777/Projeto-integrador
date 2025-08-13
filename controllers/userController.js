@@ -15,8 +15,7 @@ const createUser = async (req, res) => {
       return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
     }
     
-    // Criptografar a senha
-    const hashedPassword = await bcrypt.hash(senha_cliente, 10); // O '10' é o 'salt' que define a complexidade do hash
+    const hashedPassword = await bcrypt.hash(senha_cliente, 10);
 
     const newUser = await User.create({
       email_cliente,
@@ -26,7 +25,10 @@ const createUser = async (req, res) => {
       telefone_cliente
     });
     
-    res.status(201).json({ message: 'Usuário criado com sucesso!', user: newUser });
+    const userWithoutId = newUser.toJSON();
+    delete userWithoutId.id_cliente;
+    
+    res.status(201).json({ message: 'Usuário criado com sucesso!', user: userWithoutId });
   } catch (error) {
     console.error('Erro ao criar usuário:', error);
     res.status(500).json({ error: 'Erro interno do servidor.' });
