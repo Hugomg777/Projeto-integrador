@@ -65,7 +65,7 @@ const EnderecoController = {
             if (deletedRows === 0) {
                 return res.status(404).json({ error: 'Endereço não encontrado.' });
             }
-            return res.status(204).send();
+            return res.status(200).json({ message: 'Endereço apagado com sucesso' });
         } catch (error) {
             console.error('Erro ao deletar endereço:', error);
             return res.status(500).json({ error: 'Erro interno do servidor ao deletar endereço.' });

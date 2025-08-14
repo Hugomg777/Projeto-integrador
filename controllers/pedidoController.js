@@ -81,7 +81,7 @@ exports.deletarPedido = async (req, res) => {
     if (linhasDeletadas === 0) {
       return res.status(404).json({ error: 'Pedido não encontrado.' });
     }
-    res.status(204).send(); 
+    res.status(200).json({ message: 'Pedido apagado com sucesso' });
   } catch (error) {
     console.error('Erro ao deletar pedido:', error);
     res.status(500).json({ error: 'Erro interno do servidor ao deletar pedido.' });
