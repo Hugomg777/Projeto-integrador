@@ -12,6 +12,7 @@ const productRoutes = require('./routes/productRoutes');
 const artistaRoutes = require('./routes/artistaRoutes');
 const enderecoRoutes = require('./routes/enderecoRoute');
 const pedidoRoutes =  require('./routes/pedidoRoute');
+const avaliacaoRoutes = require('./routes/avaliacaoRoutes');
 
 app.use('/api/carteiras', carteiraRoutes);
 app.use('/api/users', userRoutes);
@@ -19,6 +20,7 @@ app.use('/api/produtos', productRoutes);
 app.use('/api/artistas', artistaRoutes);
 app.use('/api/enderecos', enderecoRoutes);
 app.use('/api/pedidos', pedidoRoutes);
+app.use('/api/avaliacoes', avaliacaoRoutes);
 
 app.get('/', (_req, res) => {
     res.send('Bem-vindos ao Vale das Artes! API a funcionar.');
@@ -28,7 +30,7 @@ const initializeApp = async () => {
     try {
         await connectDB(); // Chama a função que tenta autenticar a conexão com o DB
 
-        await sequelize.sync({ alter: true });
+        await sequelize.sync();
         console.log('Todos os modelos foram sincronizados com sucesso com o banco de dados.');
 
         const PORT = process.env.PORT || 3000; // Pega a porta do .env ou usa 3000
