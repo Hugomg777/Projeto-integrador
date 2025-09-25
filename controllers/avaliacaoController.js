@@ -10,9 +10,6 @@ const validarDadosAvaliacao = (req, res, next) => {
         });
     }
 
-    // A validação de id_produto é necessária apenas para a rota POST (Criação).
-    // Para PUT (Atualização), o id_produto pode não estar no body se não for alterado.
-    // Deixaremos a validação aqui, mas se quiser flexibilizar o PUT, remova este bloco:
     if (req.method === 'POST' && (!id_produto || isNaN(parseInt(id_produto)))) {
         return res.status(400).json({ 
             mensagem: 'O campo "id_produto" é obrigatório e deve ser um ID válido.' 
@@ -86,7 +83,6 @@ const listarAvaliacoesPorProduto = async (req, res) => {
     }
 };
 
-// --- FUNÇÃO FALTANTE: ATUALIZAR ---
 const atualizarAvaliacao = async (req, res) => {
     try {
         const { id_avaliacao } = req.params;
@@ -116,7 +112,6 @@ const atualizarAvaliacao = async (req, res) => {
     }
 };
 
-// --- FUNÇÃO FALTANTE: DELETAR ---
 const deletarAvaliacao = async (req, res) => {
     try {
         const { id_avaliacao } = req.params;
