@@ -13,6 +13,12 @@ const artistaRoutes = require('./routes/artistaRoutes');
 const enderecoRoutes = require('./routes/enderecoRoute');
 const pedidoRoutes =  require('./routes/pedidoRoute');
 const avaliacaoRoutes = require('./routes/avaliacaoRoutes');
+const administradorRoutes = require('./routes/administradorRoutes'); // Alef
+const carrinhoRoutes = require('./routes/carrinhoRoutes'); //Alef
+const carrinhoProdutoRoutes = require('./routes/carrinho_produtoRoutes'); // Alef
+const credenciaisRoutes = require('./routes/credenciaisRoutes'); // Alef
+const pedidoProdutoRoutes = require('./routes/pedido_produtoRoutes');// Alef
+
 
 app.use('/api/carteiras', carteiraRoutes);
 app.use('/api/users', userRoutes);
@@ -21,6 +27,11 @@ app.use('/api/artistas', artistaRoutes);
 app.use('/api/enderecos', enderecoRoutes);
 app.use('/api/pedidos', pedidoRoutes);
 app.use('/api/avaliacoes', avaliacaoRoutes);
+app.use('/api/administradores', administradorRoutes); // Alef
+app.use('/api/carrinhos', carrinhoRoutes); //Alef
+app.use('/api/pedido-produtos', pedidoProdutoRoutes); // Alef
+app.use('/api/credenciais', credenciaisRoutes); // Alef
+app.use('/api/carrinho-produto', carrinhoProdutoRoutes); // Alef
 
 app.get('/', (_req, res) => {
     res.send('Bem-vindos ao Vale das Artes! API a funcionar.');
