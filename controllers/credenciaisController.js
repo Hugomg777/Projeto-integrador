@@ -1,4 +1,4 @@
-const Credencial = require('../models/entidades/Credencial');
+const Credencial = require('../models/entidades/Credenciais');
 
 // Criar uma nova credencial (salvando senha como texto puro)
 exports.createCredencial = async (req, res) => {

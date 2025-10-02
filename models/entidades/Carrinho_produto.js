@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../../config/db');
-const Carrinho = require('./Carrinho_produto'); 
-const Produto = require('./produto'); 
+const Carrinho = require('./Carrinho');
+const Produto = require('./Product'); 
 
 const CarrinhoProduto = sequelize.define('CarrinhoProduto', {
   id_carrinho_produto: {
@@ -33,8 +33,5 @@ const CarrinhoProduto = sequelize.define('CarrinhoProduto', {
   timestamps: false
 });
 
-// Definindo as associações de muitos para muitos
-Carrinho.belongsToMany(Produto, { through: CarrinhoProduto, foreignKey: 'id_carrinho' });
-Produto.belongsToMany(Carrinho, { through: CarrinhoProduto, foreignKey: 'id_produto' });
 
 module.exports = CarrinhoProduto;

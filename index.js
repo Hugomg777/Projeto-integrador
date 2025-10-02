@@ -18,6 +18,7 @@ const carrinhoRoutes = require('./routes/carrinhoRoutes'); //Alef
 const carrinhoProdutoRoutes = require('./routes/carrinho_produtoRoutes'); // Alef
 const credenciaisRoutes = require('./routes/credenciaisRoutes'); // Alef
 const pedidoProdutoRoutes = require('./routes/pedido_produtoRoutes');// Alef
+const pagamentoRoutes = require('./routes/pagamentoRoute');
 
 
 app.use('/api/carteiras', carteiraRoutes);
@@ -32,6 +33,7 @@ app.use('/api/carrinhos', carrinhoRoutes); //Alef
 app.use('/api/pedido-produtos', pedidoProdutoRoutes); // Alef
 app.use('/api/credenciais', credenciaisRoutes); // Alef
 app.use('/api/carrinho-produto', carrinhoProdutoRoutes); // Alef
+app.use('/api/pagamentos', pagamentoRoutes);
 
 app.get('/', (_req, res) => {
     res.send('Bem-vindos ao Vale das Artes! API a funcionar.');
@@ -39,7 +41,7 @@ app.get('/', (_req, res) => {
 
 const initializeApp = async () => {
     try {
-        await connectDB(); // Chama a função que tenta autenticar a conexão com o DB
+       await connectDB(); // Chama a função que tenta autenticar a conexão com o DB
 
         await sequelize.sync();
         console.log('Todos os modelos foram sincronizados com sucesso com o banco de dados.');
